@@ -114,16 +114,7 @@ public class S3ServiceImpl implements S3Service {
 	// AmazonS3ClientBuilder object is
 	// not ThreadSafe.
 	private final AmazonS3 getS3Object() {
-		
 
-	    /*BasicAWSCredentials awsCreds = new BasicAWSCredentials(
-	            "AKIAIKLEIZ3CVW6HIPXQ",
-	            "LbgyBeuCwjH6YkLTXOAGZ5nzNnL3GoWF3wevCAEZ");
-	    AmazonS3 s3 = AmazonS3ClientBuilder.standard()
-	            .withRegion(Regions.US_EAST_1)
-	            .withCredentials(new AWSStaticCredentialsProvider(awsCreds))
-	            .build();
-*/		        
 		AmazonS3 s3 = AmazonS3ClientBuilder
 				.standard()
 				.withRegion(Regions.US_EAST_1)
