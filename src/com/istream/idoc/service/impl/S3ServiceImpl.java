@@ -124,58 +124,6 @@ public class S3ServiceImpl implements S3Service {
 
 		return s3;
 	}
-
-	/*private final AmazonS3 getS3Object() {
-		AWSCredentials awsCredentials = DefaultAWSCredentialsProviderChain
-				.getInstance().getCredentials();
-		BasicAWSCredentials awsCreds = null;
-
-		if (null != awsCredentials
-				&& StringUtils.isNotBlank(awsCredentials.getAWSAccessKeyId())
-				&& StringUtils.isNotBlank(awsCredentials.getAWSSecretKey())) {
-			awsCreds = new BasicAWSCredentials(
-					awsCredentials.getAWSAccessKeyId(),
-					awsCredentials.getAWSSecretKey());
-		}
-
-		// Note: AmazonS3ClientBuilder is not thread safe so you need to
-		// Initialize every request.
-		AmazonS3 s3 = null;
-		if (null == awsCreds) {
-			s3 = AmazonS3ClientBuilder
-					.standard()
-					.withRegion(Regions.US_EAST_1)
-					.withCredentials(
-							new InstanceProfileCredentialsProvider(true))
-					.build();
-
-		} else {
-			s3 = AmazonS3ClientBuilder
-					.standard()
-					.withRegion(Regions.US_EAST_1)
-					.withCredentials(new AWSStaticCredentialsProvider(awsCreds))
-					.build();
-		}
-
-		return s3;
-	}
-	*/
-	 /*public byte[] getS3ObjectByKey(String key){
-		
-         S3Object s3Object = amazonS3.getObject(
-                 new GetObjectRequest(bucketName, key));
-         byte[] s3ObjByteStream = null;
-		try {
-			if (s3Object != null){
-				s3ObjByteStream = IOUtils.toByteArray(s3Object.getObjectContent());
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return s3ObjByteStream;
-		 
-	 }*/
 	 
 	
 	/**
