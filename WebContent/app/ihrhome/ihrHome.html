@@ -1,0 +1,55 @@
+<section class="main">
+	<div class="container">
+		<div class="row">
+			<ul class="listing">
+				<li class="col-sm-6" ng-if="userProfile.role == 'ADMIN'"><a href="#/employee">
+						<div class="list1">
+							<span class="icon"><img src="images/employee.png" /></span>Employee
+						</div>
+				</a></li>
+				<li class="col-sm-6" ng-if="userProfile.role == 'ADMIN'"><a href="#/addEmployee">
+						<div class="list1">
+							<span class="icon"><img src="images/add-emp.png" /></span>Add Employee
+						</div>
+				</a></li>
+				<!-- 
+				<li class="col-sm-6"><a href="timesheet.html">
+						<div class="list1">
+							<span class="icon"><img src="images/timesheet.png" /></span>Timesheet
+						</div>
+				</a></li>
+				-->
+				<li class="col-sm-6" ng-if="userProfile.role == 'ADMIN'"><a href="#/healthInsurance">
+						<div class="list1">
+							<span class="icon"><img src="images/health-insurance.png" /></span>Health Insurance
+						</div>
+				</a></li>
+				<li class="col-sm-6" ng-if="userProfile.role == 'ADMIN'"><a href="#/client">
+						<div class="list1">
+							<span class="icon"><img src="images/client.png" /></span>Client
+						</div>
+				</a></li>
+				<li class="col-sm-6" ng-if="userProfile.role == 'ADMIN'"><a href="#/project">
+						<div class="list1">
+							<span class="icon"><img src="images/project.png" /></span>Project
+						</div>
+				</a></li>
+				<li class="col-sm-6" ng-if="userProfile.role == 'EMPLOYEE'"><a ng-href="#/addTimesheet/{{userProfile.employeeId}}">
+						<div class="list1">
+							<span class="icon"><img src="images/add-timesheet.png" /></span>Add Timesheet
+						</div>
+				</a></li>
+				<li class="col-sm-6" ng-if="userProfile.role == 'EMPLOYEE'"><a ng-href="#/employeeDetail/{{userProfile.employeeId}}">
+						<div class="list1">
+							<span class="icon"><img src="images/employee.png" /></span>View Personal Details
+						</div>
+				</a></li>
+				<li class="col-sm-6" ng-if="userProfile.role == 'EMPLOYEE'"><a ng-href="#/employeeTimesheet/{{userProfile.employeeId}}">
+						<div class="list1">
+							<span class="icon"><img src="images/add-timesheet.png" /></span>View Timesheet Details
+						</div>
+				</a></li>
+			</ul>
+		</div>
+	</div>
+</section>

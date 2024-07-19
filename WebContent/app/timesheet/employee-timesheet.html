@@ -1,0 +1,59 @@
+<div ng-controller="EmployeeTimesheetCtrl as ctrl">
+<section class="inner-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>
+					<img src="images/employee-icon.png" alt=""><span>Timesheet Detail</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="main employee">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="white-bg">
+					<form class="form-inline search-section" ng-submit="ctrl.searchTimesheet()" name="timesheetForm">
+						<div class="form-group">
+							<label for="exampleInputName2">Month</label>
+							<select class="form-control" id="month" name="month" ng-model="ctrl.timesheet.month" ng-options="month.id as month.name for month in ctrl.monthList" required>
+								<option value="">Select Year</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail2">Year</label>
+							<select class="form-control" id="year" name="year" ng-model="ctrl.timesheet.year" ng-options="year.id as year.name for year in ctrl.yearList" required>
+								<option value="">Select Year</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary">Search</button>
+					</form>
+					<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>Date</th>
+									<th>Project</th>
+									<th>Hours</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								
+								<tr ng-repeat="timesheet in ctrl.timesheetList">
+									<td><span ng-bind="timesheet.timeSheetDate"></span></td>
+									<td><span ng-bind="timesheet.project.name"></span></td>
+									<td><span ng-bind="timesheet.billedHours"></span></td>
+									<td><span ng-bind="timesheet.description"></span></td>
+								</tr>								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</div>

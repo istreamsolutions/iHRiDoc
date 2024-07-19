@@ -1,0 +1,22 @@
+<section class="main">
+    <div class="container">
+        <div class="row">
+            <ul class="listing">
+                <li class="col-sm-6">
+                    <a href="#/ihr/home">
+                        <div class="list1">
+                            <span class="icon"><i class="fa fa-user ihr-color"></i></span>iHR
+                        </div>
+                    </a>
+                </li>
+                <li class="col-sm-6 idoc-tab" ng-if="userProfile.role == 'ADMIN'">
+                    <a href="#/idoc/home">
+                        <div class="list1">
+                            <span class="icon"><i class="fa fa-file-text idoc-color"></i></span>iDocs
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

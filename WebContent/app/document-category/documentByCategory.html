@@ -1,0 +1,57 @@
+<div ng-controller="DocumentByCategoryCtrl as ctrl">
+    <section class="inner-title">
+        <div class="container">
+            <div class="row idoc-color">
+                <div class="col-sm-12">
+                    <h2>
+                        <i class="fa fa-file-text idoc-color"></i><span>Documents by Category</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main employee">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="white-bg">
+                        <form class="form-inline search-section" ng-submit="ctrl.getDocumentsByCategory(category.folder_ID)" name="searchEmployeeForm">
+                            <div class="form-group">
+                                <label for="exampleInputEmail2">Document Category</label>                                
+                                <select class="form-control" id="category" name="category" ng-model="ctrl.searchCategory"
+                                        ng-options="category as category.folder_NAME for category in ctrl.categoryList" required style="width:initial;">
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-idoc">Search</button>
+                        </form>
+                        <div class="table-responsive">
+                             <table class="table table-bordered table-idoc">
+                                <thead>
+                                    <tr>
+                                        <th>Document Name</th>
+                                        <th>Document Type</th>
+                                        <th>Category</th>
+                                        <th>Upload Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="doc in ctrl.documentList">
+                                        <td><span ng-bind="doc.fileName"></span></td>
+                                        <td><span ng-bind="doc.fileType"></span></td>
+                                        <td><span ng-bind="doc.folderName"></span></td>
+                                        <td><span ng-bind="doc.uploadDate"></span></td>
+                                        <td>
+                                            <button type="button" class="btn btn-danger btn-delete" ng-click="ctrl.deleteDocument(doc)">Delete</button>                                            
+                                            <button type="button" class="btn btn-success btn-downloadWText" style="margin-left: 10px;" ng-click="ctrl.downloadFile(doc)">Download</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

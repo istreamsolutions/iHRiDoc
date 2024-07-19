@@ -1,0 +1,143 @@
+<div ng-controller="EmployeeDetailCtrl as ctrl">
+<section class="inner-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>
+					<img src="images/employee-icon.png" alt=""><span>Employee Details</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="main employee-detail">
+	<div class="container">
+		<div class="row">
+			<form method="POST" id="contact_details">
+				<div class="col-sm-12">
+					<fieldset>
+						<legend>Personal Details</legend>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Firstname : <span class="subname" ng-bind="ctrl.employee.firstName"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Middlename : <span class="subname" ng-bind="(ctrl.employee.middleName == undefined || ctrl.employee.middleName == '') ? '--' :  ctrl.employee.middleName"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Lastname : <span class="subname" ng-bind="ctrl.employee.lastName"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Email : <span class="subname" ng-bind="ctrl.employee.email"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Gender : <span class="subname" ng-bind="ctrl.employee.gender"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Birthdate : <span class="subname" ng-bind="(ctrl.employee.birthDate == undefined || ctrl.employee.birthDate == '') ? '--' : ctrl.employee.birthDate"></span></label>
+						</div>
+						<div class="form-group col-md-12 col-sm-12">
+							<label class="lable-color">SSN (Last 4 digits only) : <span class="subname" ng-bind="(ctrl.employee.ssn == undefined || ctrl.employee.ssn == '') ?  '--' : ctrl.employee.ssn"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Home Phone : <span class="subname" ng-bind="(ctrl.employee.homePhone == undefined || ctrl.employee.homePhone == '') ? '--' : ctrl.employee.homePhone"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Mobile Phone : <span class="subname" ng-bind="ctrl.employee.mobilePhone"></span></label>
+						</div>
+						<div class="form-group  col-md-4 col-sm-12">
+							<label class="lable-color">work Phone : <span class="subname" ng-bind="(ctrl.employee.workPhone == undefined || ctrl.employee.workPhone == '') ? '--' : ctrl.employee.workPhone"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Designation : <span class="subname" ng-bind="ctrl.employee.designation"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Base Salary : <span class="subname" ng-bind="ctrl.employee.baseSalaryAmt"></span></label>
+						</div>
+						<div class="form-group  col-md-4 col-sm-12">
+							<label class="lable-color">Bonus Amount : <span class="subname" ng-bind="(ctrl.employee.bonusAmt == undefined || ctrl.employee.bonusAmt == '') ? '--' : ctrl.employee.bonusAmt"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Start Date : <span class="subname" ng-bind="ctrl.employee.startDate | date:'MM/dd/yyyy'"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">End date : <span class="subname" ng-bind="(ctrl.employee.endDate == undefined || ctrl.employee.endDate == '') ? '--' : ctrl.employee.endDate | date:'MM/dd/yyyy'"></span></label>
+						</div>
+						<div class="form-group  col-md-4 col-sm-12">
+							<label class="lable-color">&nbsp;</label>
+						</div>
+						<div class="form-group col-md-12 col-sm-12">
+							<label class="title-address"> Address</label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Address1 :<span class="subname" ng-bind="ctrl.employee.empAddress.street1"></span></label>
+						</div>
+						<div class="form-group col-md-8  col-sm-12">
+							<label class="lable-color">Address2 : <span class="subname" ng-bind="ctrl.employee.empAddress.street2"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">City :<span class="subname" ng-bind="ctrl.employee.empAddress.city"> </span></label>
+						</div>
+						<div class="form-group col-md-4  col-sm-12">
+							<label class="lable-color">State : <span class="subname" ng-bind="ctrl.employee.empAddress.state"> </span></label>
+						</div>
+						<div class="form-group col-md-4  col-sm-12">
+							<label class="lable-color">Zipcode : <span class="subname" ng-bind="ctrl.employee.empAddress.zipcode"></span></label>
+						</div>
+						<div class="form-group col-md-4  col-sm-12">
+							<label class="lable-color">Country : <span class="subname" ng-bind="ctrl.employee.empAddress.country"></span></label>
+						</div>
+						<div class="form-group col-md-4  col-sm-12">
+							<label class="lable-color">Effective Date : <span class="subname" ng-bind="ctrl.employee.empAddress.effectiveDate"></span></label>
+						</div>
+						<div class="form-group col-md-4  col-sm-12">
+							<label class="lable-color">Terminate Date : <span class="subname" ng-bind="ctrl.employee.empAddress.termDate"></span></label>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Client Details</legend>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Client Name : <span class="subname" ng-bind="ctrl.employee.empClient.clientName"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Effective Date : <span class="subname" ng-bind="ctrl.employee.empClient.startDate"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Terminate Date : <span class="subname" ng-bind="ctrl.employee.empClient.endDate"></span></label>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Health Insurance Details</legend>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Health Carrier : <span class="subname" ng-bind="ctrl.employee.empHealthPlan.carrierName"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Plan Type : <span class="subname" ng-bind="ctrl.employee.empHealthPlan.planType"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Covered Members : <span class="subname" ng-bind="ctrl.employee.empHealthPlan.numCovdMembers"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Effective Date : <span class="subname" ng-bind="ctrl.employee.empHealthPlan.effectiveDate"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Terminate Date : <span class="subname" ng-bind="ctrl.employee.empHealthPlan.termDate"></span></label>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Immigration Details</legend>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Immigration Type : <span class="subname" ng-bind="ctrl.employee.empImmigrationDtl.immType">Infotech</span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">Start Date : <span class="subname" ng-bind="ctrl.employee.empImmigrationDtl.startDate"></span></label>
+						</div>
+						<div class="form-group col-md-4 col-sm-12">
+							<label class="lable-color">End Date : <span class="subname" ng-bind="ctrl.employee.empImmigrationDtl.endDate"></span></label>
+						</div>
+					</fieldset>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+</div>

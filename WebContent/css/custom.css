@@ -1,0 +1,165 @@
+@charset "utf-8";
+body {
+}
+header{ background-color: #b41617; background: url(images/linear_bg_2.png); background-repeat: repeat-x; 
+background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#000000), to(#0f1010)); background: -webkit-linear-gradient(top, #000000, #0f1010);
+background: -moz-linear-gradient(top, #000000, #0f1010); background: -ms-linear-gradient(top, #000000, #0f1010);   
+background: -o-linear-gradient(top, #000000, #0f1010);  padding:15px 0; margin:0 0 0px 0; box-shadow: 1px 2px 6px 0 #888;}
+.navigation .right-logo{float:right;}
+.cmpny-name{margin:0;}
+.main{margin:0 0 0 0}
+.listing{padding:0}
+.listing li{list-style:none}
+.listing li:hover .list1{color:#b21310; }
+.listing li:hover a{text-decoration:none;}
+.list1{ padding:14px 10px; background:#ffffff; border-bottom:2px solid #c95957;  font-size:20px; color:#222; box-shadow: 0 0 4px rgba(0,0,0,0.6);
+-moz-box-shadow: 0 0 4px rgba(0,0,0,0.6); -webkit-box-shadow: 0 0 4px rgba(0,0,0,0.6); -o-box-shadow: 0 0 4px rgba(0,0,0,0.6); margin-bottom:20px; }
+.list1 span{ margin-right:10px}
+.list1:hover{border-bottom:2px solid #b21310}
+.loginname{color:#ffffff}
+
+/* Login page */
+
+.login-page {
+  background: rgb(255, 255, 255) none repeat scroll 0 0;
+  border: 1px solid #b4b4b4;
+  border-radius: 5px;
+  box-shadow: 1px 2px 2px 1px #e2e2e2;
+  margin: 20px auto 54px;
+  min-height: 140px;
+  padding:0 40px 40px
+}
+.login-page h2 {
+  color: #a9a9a9;
+  font-size: 30px;
+  padding-bottom: 25px;
+  padding-top: 30px;
+  text-transform: none;
+  text-align:center;
+  margin:0;
+  font-weight:600;
+}
+
+/* common  */ 
+.inner-title h2{margin:0 0 20px 0; padding:0; color:#ee8317; }
+.inner-title h2 img{vertical-align:top;}
+.inner-title h2 span{padding:5px 0 0 10px;}
+.require-field{color:red; padding-left:2px;}
+
+/* Employee */
+.employee .white-bg {background: rgb(255, 255, 255) none repeat scroll 0 0;  border: 1px solid #b4b4b4;  box-shadow: 1px 2px 2px 1px #e2e2e2;
+margin: 20px auto 10px;  padding:30px;}
+.search-section .form-control{width:85%;}
+.search-section .btn-primary{padding:6px 12px;
+  font-size:15px}
+.employee .search-section{margin: 0 0 40px 0}
+.editicon{background:url(../images/edit.png) no-repeat; float:left; height:20px; width:20px; margin-right:10px;}
+.viewicon{background:url(../images/view.png) no-repeat; float:left; height:20px; width:20px; margin-right:10px;}
+.timesheeticon{background:url(../images/timesheet_icon.png) no-repeat; float:left; height:20px; width:20px}
+.editicon:hover{background:url(../images/edit-hover.png) no-repeat;}
+.viewicon:hover{background:url(../images/view-hover.png) no-repeat;}
+.timesheeticon:hover{background:url(../images/timesheet_icon_hover.png) no-repeat;}
+/* timesheet */
+
+.table-bordered th{background-color:#b41617; color:#fff;}
+
+/* employee detail */
+#contact_details .form-group{margin-bottom:20px}
+#contact_details .subname{font-weight:300}
+.title-address{font-size:20px; width:100%; margin-bottom:10px}
+.employee-detail .form-cover{border:1px solid #ccc; padding:20px;}
+.employee-detail .form-cover legend {color:#f18e00; font-weight:600; margin:0; float:left; padding:10px 10px}
+
+.error {color: RED;}
+
+.ihr-color {
+    color: #b41617;
+}
+.idoc-color span,
+.idoc-color fa,
+.idoc-color {
+   color: #3BA2DC;
+}
+.idoc-tab {
+
+}
+.listing li.idoc-tab:hover .list1 {
+    color: #3BA2DC !important;
+    border-bottom: 2px solid #3BA2DC;
+}
+
+.listing li.idoc-tab .list1 {
+    
+    border-bottom: 2px solid #3BA2DC !important;
+}
+.list1 i.fa {
+    font-size: 24px;
+}
+.idoc-header {
+    background:#3BA2DC !important;
+}
+.btn-idoc {
+    background-color: #3BA2DC !important;
+    border-color: #3BA2DC !important;
+}
+.table-idoc.table-bordered th{
+ background-color: #3BA2DC !important; 
+}
+.btn-upload:after {
+    font-family: 'FontAwesome';
+    content: '\f0ee';
+    padding-left: 10px;
+    position: relative;
+    font-size: 100%;
+}
+.btn-download:after {
+    font-family: 'FontAwesome';
+    content: '\f0ed';    
+    position: relative;
+    font-size: 100%;
+}
+.btn-downloadWText:after {
+    font-family: 'FontAwesome';
+    content: '\f0ed';    
+    position: relative;
+    font-size: 100%;
+    padding-left: 10px;
+}
+.btn-delete:after {
+    font-family: 'FontAwesome';
+    content: '\f1f8';    
+    position: relative;
+    font-size: 100%;
+    padding-left: 10px;
+}
+.btn-document:after {
+    font-family: 'FontAwesome';
+    content: '\f15c';    
+    position: relative;
+    font-size: 100%;
+    padding-left: 10px;
+}
+.table-left-aligned td {
+    text-align: left;
+}
+.table.lastrowboarder > tbody > tr:last-child > td{
+    border-bottom: 1px solid #ddd;
+}
+.table.lastrowboarder td {
+    vertical-align:middle;
+}
+.float-right {
+    float:right;
+}
+.btn-fileinput {
+background-color: transparent !Important;
+    border: none !important;
+    color: #333 !Important;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 22px;
+    font-family: inherit;
+    margin: 0;
+}

@@ -1,0 +1,62 @@
+<div ng-controller="EmployeeCtrl as ctrl">
+<section class="inner-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2 class="idoc-color">
+					<img src="images/employee-icon_blue.png" alt=""><span>Documents - Employees</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="main employee">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="white-bg">
+					<form class="form-inline search-section" ng-submit="ctrl.searchEmployee()" name="searchEmployeeForm">
+						<div class="form-group">
+							<label for="exampleInputName2">Name</label>
+							<input type="text" class="form-control" placeholder="Jane Doe" id="name" name="name" ng-model="ctrl.searchEmp.name">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail2">Client</label>
+							<!-- <input type="text" class="form-control" id="client" nanme="client" ng-model="ctrl.searchEmp.client"> -->
+							<select class="form-control" id="client" name="client" ng-model="ctrl.searchEmp.client" ng-options="client.name as client.name for client in ctrl.clientList">
+								<option value="">Select Client</option>
+							</select>
+						</div>
+						<button type="submit" class="btn btn-primary btn-idoc">Search</button>
+					</form>
+					<div class="table-responsive">
+						<table class="table table-bordered table-idoc">
+							<thead>
+								<tr>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Email</th>
+									<th>&nbsp;</th>
+								</tr>
+							</thead>
+							<tbody>
+								
+								<tr ng-repeat="emp in ctrl.employeeList">
+									<td><span ng-bind="emp.firstName"></span></td>
+									<td><span ng-bind="emp.lastName"></span></td>
+									<td><span ng-bind="emp.email"></span></td>
+									<td>
+										<a ng-href="#/employeeDocument/{{emp.employeeId}}/{{emp.firstName}}/{{emp.lastName}}">
+											<img alt="document" src="images/document_blue.png" height="20" width="20">
+										</a>
+									</td>
+								</tr>								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</div>

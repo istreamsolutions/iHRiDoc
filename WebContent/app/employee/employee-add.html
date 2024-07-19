@@ -1,0 +1,115 @@
+<div ng-controller="AddEmployeeCtrl as ctrl">
+<section class="inner-title">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>
+					<img src="images/add-emp-icon.png"><span>Add Employee</span>
+				</h2>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="employee">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="white-bg">
+					<form ng-submit="ctrl.createEmployee()" name="addEmployeeForm">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">First Name<span class="require-field">*</span></label>
+									<input type="text" class="form-control" id="firstname" placeholder="Enter firstname" name="firstname" maxlength="60" ng-model="ctrl.employee.firstName" required> 
+									<span class="error" ng-show="addEmployeeForm.firstname.$touched && addEmployeeForm.firstname.$invalid">Please enter First Name</span>
+								</div>
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Middle Name</label>
+									<input type="text" class="form-control" id="middlename" placeholder="Enter middle name" name="middlename" maxlength="60" ng-model="ctrl.employee.middleName">							</div>
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Last Name<span class="require-field">*</span></label> 
+									<input type="text" class="form-control" id="lastname" placeholder="Enter last name" name="lastname" maxlength="60" ng-model="ctrl.employee.lastName" required>
+									<span class="error" ng-show="addEmployeeForm.lastname.$touched && addEmployeeForm.lastname.$invalid">Please enter Last Name</span>
+								</div>
+							</div>
+							
+							<div class="col-sm-12">	
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Email<span class="require-field">*</span></label>
+									<input type="text" class="form-control" id="email" placeholder="Enter last name" name="email" maxlength="100" ng-model="ctrl.employee.email" required>
+									<span class="error" ng-show="addEmployeeForm.email.$touched && addEmployeeForm.email.$error.required">Please enter Email</span>
+									<span class="error" ng-show="addEmployeeForm.email.$touched && addEmployeeForm.email.$error.email">Please enter valid Email</span>
+								</div>
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Gender<span class="require-field">*</span></label>
+									<select class="form-control" id="gender_name" name="gender_name" ng-model="ctrl.employee.gender" ng-options="gender.GenderName as gender.GenderName for gender in ctrl.genderList" required>
+										<option value="">Select Gender</option>
+									</select>
+									<span class="error" ng-show="addEmployeeForm.gender_name.$touched && addEmployeeForm.gender_name.$invalid">Please select Gender</span>
+								</div>
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Birth Date</label>
+									<input type='text' class="form-control" placeholder="MM/DD/YYYY" id="birthDate" name="birthDate" ng-model="ctrl.employee.birthDate"/>
+								</div>
+							</div>							
+							
+							<div class="col-sm-12">
+								<div class="form-group col-md-12 col-sm-12">
+									<label class="lable-color">SSN(Last 4 digits only)</label> 
+									<input type="text" class="form-control" id="ssn" placeholder="Enter Social Security Number" name="ssn" maxlength="4" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39" ng-model="ctrl.employee.ssn">
+								</div>
+							</div>
+							
+							<div class="col-sm-12">
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Home Phone</label>
+									<input type='text' class="form-control" id="homephone" placeholder="Enter Home Phone" name="homephone"  maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39" ng-model="ctrl.employee.homePhone" />
+								</div>
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Mobile Phone<span class="require-field">*</span></label>
+									<input type="text" class="form-control" id="mobilephone" placeholder="Enter Mobile Phone" name="mobilephone" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 37 || event.keyCode == 39" ng-model="ctrl.employee.mobilePhone" required>
+									<span class="error" ng-show="addEmployeeForm.mobilephone.$touched && addEmployeeForm.mobilephone.$invalid">Please enter Mobile Phone</span>
+								</div>
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Work Phone</label> 
+									<input type="text" class="form-control" id="workphone" placeholder="Enter Work Phone" name="workphone" maxlength="10" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 ||  event.keyCode == 37 || event.keyCode == 39" ng-model="ctrl.employee.workPhone">
+								</div>
+							</div>
+							
+							<div class="col-sm-12">
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Designation<span	class="require-field">*</span></label>
+									<input type="text" class="form-control" id="designation" placeholder="Enter Designation" name="designation" maxlength="20" ng-model="ctrl.employee.designation" required>
+									<span class="error" ng-show="addEmployeeForm.designation.$touched && addEmployeeForm.designation.$invalid">Please enter Designation</span>
+								</div>
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Base Salary<span	class="require-field">*</span></label>
+									<input type="text" class="form-control" id="basesalary" placeholder="Enter Base Salary" name="basesalary" maxlength="9" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 190 || event.keyCode == 37 || event.keyCode == 39" ng-model="ctrl.employee.baseSalaryAmt" required>
+									<span class="error" ng-show="addEmployeeForm.basesalary.$touched && addEmployeeForm.basesalary.$invalid">Please enter Base Salary</span>
+								</div>
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">Bonus Amount</label> 
+									<input type="text" class="form-control" id="bonusAmount" placeholder="Enter Bonus Amount" name="bonusAmount" maxlength="9" onkeypress="return (event.charCode >= 48 && event.charCode <= 57) || event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 190 || event.keyCode == 37 || event.keyCode == 39" ng-model="ctrl.employee.bonusAmt">
+								</div>
+							</div>
+							
+							<div class="col-sm-12">
+								<div class="form-group col-md-8 col-sm-12">
+									<label class="lable-color">Start Date<span class="require-field">*</span></label>
+									<input type="text" id="startDate" name="startDate" class="form-control" placeholder="MM/DD/YYYY" ng-model="ctrl.employee.startDate" required/>
+									<span class="error" ng-show="addEmployeeForm.startDate.$touched && addEmployeeForm.startDate.$error.required">Start Date is required.</span>
+								</div>
+								<div class="form-group col-md-4 col-sm-12">
+									<label class="lable-color">End Date</label>
+									<input type="text" id="endDate" name="endDate" class="form-control" placeholder="MM/DD/YYYY" ng-model="ctrl.employee.endDate"/>
+								</div>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</div>

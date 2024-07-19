@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	
+	<display-name>iHR</display-name>
+
+	<servlet>
+		<servlet-name>api</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/api-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>api</servlet-name>
+		<url-pattern>/api/*</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+	  		/WEB-INF/applicationContext.xml
+	  		/WEB-INF/security-context.xml
+  		</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<!-- Filters -->
+	
+	<filter>
+		<filter-name>CORS Filter</filter-name>
+		<filter-class>com.istream.ihr.filters.CORSFilter</filter-class>
+		<init-param>
+			<description>A comma separated list of allowed origins. Note: An '*' cannot be used for an allowed origin when using credentials.</description>
+			<param-name>cors.allowed.origins</param-name>
+			<param-value>http://localhost:8080,https://accounts.google.com,http://ihr-env-dev.us-east-1.elasticbeanstalk.com,http://ihr-env.us-east-1.elasticbeanstalk.com</param-value>
+			<!-- <param-value>http://ihr-env.us-east-1.elasticbeanstalk.com,https://accounts.google.com</param-value> -->
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CORS Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	  
+	<filter>
+		<filter-name>authenticationFilter</filter-name>
+		<filter-class>com.istream.ihr.filters.AuthenticationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>authenticationFilter</filter-name>
+		<url-pattern>/api/*</url-pattern>
+		<url-pattern>/index.html</url-pattern>
+	</filter-mapping>	
+ 	
+	<filter>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/api/*</url-pattern>
+		<url-pattern>/index.html</url-pattern>
+	</filter-mapping>	
+
+</web-app>
